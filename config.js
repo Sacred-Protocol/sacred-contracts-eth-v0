@@ -14,33 +14,37 @@ module.exports = {
         decimals: 18
       },
     },
-    netId42: {
+    netId4: {
       eth: {
         instanceAddress: {
-          '0.1': '0x3e35bb3D9536298F0b2D87347ad15147C068547B',
-          '1': '0x802d24797E19480f93aEaF8d3e5E0115e2A507F9',
-          '10': '0x08035984E42705E18fE1b5AA29AEE91d75f6b842',
-          '100': '0xD8bA5d188B082Cd9959c0242f37405c4B84Cb72E'
+          0.1: "0x8e1657ffdf84Ef90c25E8dc465Fa23127f4185Ef",
+          1: "0xf88BD8230A9e3Ad6cEE4A14B5B5D834084E80371",
+          10: "0x0415F93a1b846EB4471681680f948b34BcEb9156",
+          100: "0xC18b26cC6C19BcEBbfdC456029eE93181e933BfD"
         },
         symbol: 'ETH',
         decimals: 18
-      },
-      ceth: {
+      }
+    },
+    netId42: {
+      eth: {
         instanceAddress: {
-          '1': '0x6504342B28d20853f87BC3E2e63012c30AB8080C',
+          0.1: "0xaAa355c04bee5D0dAd9f774F30c0Fb49FEdF252e",
+          1: "0x147A4B5a098d71E457030E2F0631a00e62680102",
+          10: "0x13742E4Ed90B6ff8B73A763670ae6FAbb250767c",
+          100: "0x6944D64CC1487a2715EE35aef617f8767DF0815e"
         },
-        tokenAddress: '0x41b5844f4680a8c38fbb695b7f9cfd1f64474a72',
-        symbol: 'cETH',
-        decimals: 8
-      },
+        symbol: 'ETH',
+        decimals: 18
+      }
     },
     netId80001: {
       eth: {
         instanceAddress: {
-          '0.1': '0xA64101A1e0527B6057C22cB132b7E79E7351340A',
-          '1': '0x26fb1eD6B478176ce73b5fb4B351dC066BbF77A8',
-          '10': '0xa49Bd69F7a2FF83d7E0EDd7F6F51FdE9C771e67c',
-          '100': '0x3FAc4fCa73dCaE1E8bDa5A51DB32E88E8F07230a'
+          0.1: "0x91CCB886d9E0A916c76eE17cD311A276d1a4C40f",
+          1: "0x1731094433BE73250707bDF94FdB4B1bf0BDbAca",
+          10: "0x28c62C78A015Ce6505dFD594D90A6a43dA3068Bd",
+          100: "0x2588DaA1892A858C83E7a1Ba8b0f996Cc30877d1"
         },
         symbol: 'ETH',
         decimals: 18
