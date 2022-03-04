@@ -2,7 +2,7 @@
 
 ## Introduction
 
-This is a variant of Tornado cash compatible with the [Aave protocol](https://aave.com/). The source code is orginiated from [tornado-core](https://github.com/tornadocash/tornado-core).
+The source code is orginiated from [tornado-core](https://github.com/tornadocash/tornado-core).
 
 ## Installation
 
@@ -30,10 +30,13 @@ To deploy other pool sizes, change the ETH_AMOUNT parameter.
 ### Test
 
 Update contract addresses in `config.js`
+
+Deposit:
 ```bash
-$ ./cli.js sacredtest eth 0.1 <RECIPIENT ADDR> --rpc <RPC URL>
+$ ./cli.js deposit eth 0.1 --rpc <RPC URL>
 ```
 
-## Contract guidance
-
-TBA.
+Withdraw:
+```bash
+$ ./cli.js withdraw <NOTE> <RECIPIENT ADDR> --rpc <RPC URL>
+```
