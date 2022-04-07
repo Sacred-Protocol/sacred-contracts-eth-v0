@@ -31,6 +31,11 @@ To deploy other pool sizes, change the ETH_AMOUNT parameter.
 
 Update contract addresses in `config.js`
 
+Deposit + Withdraw:
+```bash
+$ ./cli.js sacredtest eth 0.1 <CHAIN ID (42 for Kovan)> <RECIPIENT ADDR> --rpc <RPC URL>
+```
+
 Deposit:
 ```bash
 $ ./cli.js deposit eth 0.1 --rpc <RPC URL>
