@@ -51,6 +51,15 @@ module.exports = {
       // timeoutBlocks: 200,
       skipDryRun: true
     },
+    rinkeby: {
+      provider: () => new HDWalletProvider(process.env.PRIVATE_KEY, process.env.INFURA_RINKEBY),
+      network_id: 4,
+      gas: 6000000,
+      gasPrice: utils.toWei('3', 'gwei'),
+      // confirmations: 0,
+      // timeoutBlocks: 200,
+      skipDryRun: true
+    },
     mainnet: {
       provider: () => new HDWalletProvider(process.env.PRIVATE_KEY, process.env.INFURA_MAINNET),
       network_id: 1,
