@@ -1,5 +1,7 @@
 # Sacred
 
+This branch uses [Tornado's public trusted setup ceremony keys](https://github.com/tornadocash/tornado-core/releases/tag/v2.1)
+
 ## Introduction
 
 The source code is orginiated from [tornado-core](https://github.com/tornadocash/tornado-core).
