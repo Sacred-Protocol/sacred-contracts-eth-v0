@@ -5,10 +5,8 @@ module.exports = {
     netId1: {
       eth: {
         instanceAddress: {
-          0.1: "0x21A85A1F70Cf0EDC3ee4B91d479011deef2193F1",
-          1: undefined,
-          10: undefined,
-          100: undefined
+          0.1: "0x69ADD7A9a222447e857ac3926F7B87dD0868A13c",
+          1: "0x5F7b0bC185eF688D15ab0bD0320DD7C0D7A567Cc",
         },
         symbol: 'ETH',
         decimals: 18

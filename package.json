@@ -20,7 +20,7 @@
     "migrate:kovan": "npx truffle migrate --network kovan --reset --f 1 --to 4",
     "migrate:mumbai": "npx truffle migrate --network mumbai --reset --f 1 --to 4",
     "migrate:rinkeby": "npx truffle migrate --network rinkeby --reset --f 1 --to 4",
-    "migrate:mainnet": "npx truffle migrate --network mainnet",
+    "migrate:mainnet": "npx truffle migrate --network mainnet --reset --f 1 --to 4",
     "eslint": "npx eslint --ignore-path .gitignore .",
     "flat": "npx truffle-flattener contracts/ETHSacred.sol > ETHSacred_flat.sol && npx truffle-flattener contracts/ERC20Sacred.sol > ERC20Sacred_flat.sol",
     "download": "node downloadKeys.js"
