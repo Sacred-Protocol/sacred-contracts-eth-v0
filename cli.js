@@ -227,12 +227,12 @@ async function withdraw({ deposit, currency, amount, recipient, relayerURL, refu
       throw new Error('ENS name resolving is not supported. Please provide DNS name of the relayer. See instuctions in README.md')
     }
     const relayerStatus = await axios.get(relayerURL + '/status')
-    const { relayerAddress, netId, gasPrices, ethPrices, relayerServiceFee } = relayerStatus.data
+    const {maxPriorityFeePerGas, relayerAddress, netId, gasPrices, ethPrices, relayerServiceFee } = relayerStatus.data
     assert(netId === await web3.eth.net.getId() || netId === '*', 'This relay is for different network')
     console.log('Relay address: ', relayerAddress)
 
     const decimals = isLocalRPC ? 18 : config.deployments[`netId${netId}`][currency].decimals
-    const fee = calculateFee({ gasPrices, currency, amount, refund, ethPrices, relayerServiceFee, decimals })
+    const fee = calculateFee({maxPriorityFeePerGas, gasPrices, currency, amount, refund, ethPrices, relayerServiceFee, decimals })
     if (fee.gt(fromDecimals({ amount, decimals }))) {
       throw new Error('Too high refund')
     }
@@ -372,14 +372,15 @@ function getCurrentNetworkName() {
 
 }
 
-function calculateFee({ gasPrices, currency, amount, refund, ethPrices, relayerServiceFee, decimals }) {
+function calculateFee({ maxPriorityFeePerGas, gasPrices, currency, amount, refund, ethPrices, relayerServiceFee, decimals }) {
   const decimalsPoint = Math.floor(relayerServiceFee) === Number(relayerServiceFee) ?
     0 :
     relayerServiceFee.toString().split('.')[1].length
   const roundDecimal = 10 ** decimalsPoint
   const total = toBN(fromDecimals({ amount, decimals }))
   const feePercent = total.mul(toBN(relayerServiceFee * roundDecimal)).div(toBN(roundDecimal * 100))
-  const expense = toBN(toWei(gasPrices.fast.toString(), 'gwei')).mul(toBN(0xF4240))
+  const maxPriorityFeePerGasInBN = toBN(maxPriorityFeePerGas);
+  const expense = toBN(toWei(gasPrices.fast.toString(), 'gwei')).add(maxPriorityFeePerGasInBN).mul(toBN(0xF4240))
   let desiredFee
   switch (currency) {
   case 'eth': {
